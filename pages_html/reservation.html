@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+   <script>
+        function verif()
+        { var i;
+          alert("debut des contrôles")
+          if (f1.n.value.length>30)
+          {
+            alert("test");
+            return false;
+          }
+          ch=f1.n.value.toUpperCase();
+          for(i=0;i<ch.length;i++)
+          {
+            if(ch.charAt(i)<'A'|| ch.charAt(i)>'Z' )
+            {
+              alert("il faut que le nom soit alphabétique");
+              return false;}
+            }
+          if (f1.pr.value.length>30)
+          {
+            alert("test");
+            return false ;
+          }
+          ch1=f1.pr.value.toUpperCase();
+          for(i=0;i<ch1.length;i++)
+          {
+            if(ch1.charAt(i)<'A'|| ch1.charAt(i)>'Z')
+            { alert(' il faut que le prénom soit alphabétique');
+              return false;
+          } else if (f1.m.value=="") 
+          {
+            alert("le mail est obligatoire");
+            return false ;
+          }}
+          
+        }
+   </script>
+</head>
+<body>
+  <form id="form1" name="f1" method="post" action="">
+  <div class="">
+    <div class="titre">
+                
+      <h1>ORNA AIR TUNISIE </h1>
+      <nav>
+        <a href="../index.html">bienvenue</a>
+        <a href="consultation.html">rechercher des vols</a>
+        <a href="#">réservation</a>           
+      </nav>
+    </div>
+         
+    <div class="card">
+      <form action="" name="f">
+        <div class="inp">
+          <label for="nom">votre nom ?</label> 
+          <input type="text" name="n" id="nom">
+        </div>
+        <div class="inp">
+          <label for="prenom">votre prenom ?</label> 
+          <input type="text" name="pr" id="prenom">
+        </div>
+          
+        <div class="inp">
+          <label for="départ">d'ou partez-vous?</label> 
+          <input type="text" name="vd" id="ville_depart">
+        </div>
+                   
+        <div class="inp">
+          <label for="arrivé ">ou allez-vous? </label> 
+          <input type="text" name="va" id="ville_arrivée">
+        </div>
+           
+        <div class="inp">
+          <label for="date_depart">quand partez-vous?</label>
+          <input type="date" name="date_depart" id="date_depart">
+        </div>        
+          
+        <div class="inp">
+          <label for="date_retour">quand rentrez-vous?</label>
+          <input type="date" name="date_arrivé" id="date_arrivé">
+        </div>
+          
+        <div class="inp">
+          <label for="prix">prix de vol</label>
+          <input type="text" name="prix_vol" id="prix">
+        </div>
+          
+        <div class="">
+          <label for="">classe</label>
+          <input type="radio" name="classe" id="economique" value="e">
+          <label for="economique">economique</label>
+          <input type="radio" name="classe" id="premier" value="p">
+          <label for="premier">premier</label>
+          <input type="radio" name="classe" id="business" value="b">
+          <label for="business">business</label>
+        </div>     
+      </div>                    
+    </div>
+    <input class="btn" type="button" name="button" value="confirmer" onclick="verif()">
+  </form>
+  </body>
+</html>
